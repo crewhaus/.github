@@ -5,7 +5,8 @@
 <p align="center"><em>The open-source meta-harness compiler for AI agents.</em></p>
 
 <p align="center">
-  <a href="https://github.com/crewhaus/docs">Docs</a> ·
+  <a href="https://crewhaus.ai">Website</a> ·
+  <a href="https://crewhaus.ai/docs">Docs</a> ·
   <a href="https://github.com/crewhaus/docs/blob/main/GETTING-STARTED.md">Getting started</a> ·
   <a href="https://github.com/crewhaus/docs/blob/main/COMPILER-ARCHITECTURE.md">Compiler architecture</a> ·
   <a href="https://github.com/crewhaus/docs/blob/main/whitepaper/crewhaus-meta-harness-compiler.pdf">Whitepaper</a>
