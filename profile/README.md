@@ -43,13 +43,37 @@ The canonical, always-current list of target shapes lives in the [compiler-archi
 
 ## Getting started
 
-Requires [Bun](https://bun.sh) ≥ 1.2.
+Install the `crewhaus` CLI from whichever channel fits your platform. The Homebrew, Scoop, winget, and apt builds are self-contained binaries — no Bun or Node runtime required.
 
 ```bash
-bun add -d @crewhaus/cli
+# macOS / Linux — Homebrew
+brew install crewhaus/tap/crewhaus
 
+# Windows — Scoop
+scoop bucket add crewhaus https://github.com/crewhaus/scoop-bucket
+scoop install crewhaus
+
+# Windows — winget
+winget install CrewHaus.CLI
+
+# Debian / Ubuntu — apt (signed)
+curl -fsSL https://crewhaus.github.io/apt/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/crewhaus.gpg
+echo "deb [signed-by=/usr/share/keyrings/crewhaus.gpg] https://crewhaus.github.io/apt stable main" | sudo tee /etc/apt/sources.list.d/crewhaus.list
+sudo apt update && sudo apt install crewhaus
+
+# npm / Bun (requires Bun ≥ 1.2)
+npm install -g crewhaus
+# or, per-project:  bun add -d crewhaus
+
+# Confirm the install
+crewhaus --version   # e.g. 0.1.3
+```
+
+Then create, compile, and run an agent:
+
+```bash
 # Create a new agent project — writes a minimal crewhaus.yaml
-bun x crewhaus init my-agent
+crewhaus init my-agent
 cd my-agent
 
 # Add a model credential (Anthropic by default), in a .env file
@@ -57,8 +81,8 @@ echo 'ANTHROPIC_AUTH_TOKEN=sk-ant-oat01-...' > .env   # Pro/Max OAuth
 # or: echo 'ANTHROPIC_API_KEY=sk-ant-...'    > .env    # pay-per-token
 
 # Compile crewhaus.yaml to a runnable bundle, then run it
-bun x crewhaus compile crewhaus.yaml -o build
-bun x crewhaus run crewhaus.yaml
+crewhaus compile crewhaus.yaml -o build
+crewhaus run crewhaus.yaml
 ```
 
 To compile the same agent to a different shape, change `target:` in `crewhaus.yaml` to another value from the targets table and re-run `crewhaus compile`. The agent logic stays the same; only the emitted runtime changes.
