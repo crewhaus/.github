@@ -47,7 +47,7 @@ Install the `crewhaus` CLI from whichever channel fits your platform. The Homebr
 
 ```bash
 # macOS / Linux — Homebrew
-brew tap crewhaus/tap && brew install crewhaus
+brew install crewhaus/tap/crewhaus
 
 # Windows — Scoop
 scoop bucket add crewhaus https://github.com/crewhaus/scoop-bucket
