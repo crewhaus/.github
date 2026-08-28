@@ -43,11 +43,10 @@ The canonical, always-current list of target shapes lives in the [compiler-archi
 
 ## Getting started
 
-The path we recommend is [chvm](https://github.com/crewhaus/chvm), the CrewHaus version manager. It puts `crewhaus` on your PATH and switches which version your shell runs, the way nvm switches Node. Needs [Bun](https://bun.sh); macOS, Linux, and Windows.
+The path we recommend is [chvm](https://github.com/crewhaus/chvm), the CrewHaus version manager. It puts `crewhaus` on your PATH and switches which version your shell runs, the way nvm switches Node. macOS, Linux, and Windows.
 
 ```sh
-git clone https://github.com/crewhaus/chvm
-cd chvm && bun install && bun src/index.ts setup
+npm install -g @crewhaus/chvm
 chvm use latest
 ```
 
