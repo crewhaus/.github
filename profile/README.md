@@ -43,7 +43,15 @@ The canonical, always-current list of target shapes lives in the [compiler-archi
 
 ## Getting started
 
-Install the `crewhaus` CLI from whichever channel fits your platform. The Homebrew, Scoop, winget, and apt builds are self-contained binaries — no Bun or Node runtime required.
+The path we recommend is [chvm](https://github.com/crewhaus/chvm), the CrewHaus version manager. It puts `crewhaus` on your PATH and switches which version your shell runs, the way nvm switches Node. Needs [Bun](https://bun.sh); macOS, Linux, and Windows.
+
+```sh
+git clone https://github.com/crewhaus/chvm
+cd chvm && bun install && bun src/index.ts setup
+chvm use latest
+```
+
+Every package channel still works, and is what you want for a self-contained binary on a box with no Bun. The Homebrew, Scoop, winget, and apt builds need no Bun or Node runtime.
 
 ```bash
 # macOS / Linux — Homebrew
@@ -66,8 +74,10 @@ npm install -g crewhaus
 # or, per-project:  bun add -d crewhaus
 
 # Confirm the install
-crewhaus --version   # e.g. 0.1.3
+crewhaus --version
 ```
+
+`chvm use system` hands control back to whichever of those you have installed, and `chvm use latest` takes it again.
 
 Then create, compile, and run an agent:
 
